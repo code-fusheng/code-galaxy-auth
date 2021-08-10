@@ -1,7 +1,7 @@
 <template>
   <!-- 顶部 -->
   <div class="top-container">
-    <span class="item-text">Code-Galaxy</span>
+    <span class="item-text"></span>
   </div>
 </template>
 

@@ -55,7 +55,7 @@ const actions = {
         resolve(res)
       }).catch(error => {
         // 重置状态
-        commit('REST_USER_STATE')
+        commit('RESET_USER_STATE')
         reject(error)
       })
     })

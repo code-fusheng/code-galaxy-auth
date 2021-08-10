@@ -10,13 +10,16 @@ module.exports = {
       https: false, //协议
       open: true, //启动服务时自动打开浏览器访问
       proxy: { // 开发环境代理配置
-          // '/dev-api': {
-            '/auth': {
-              target: 'http://localhost:9999',
-              changeOrigin: true,
-              secure: false,
-              rewrite: (path) => path.replace('/auth', '')
-            }
+        [process.env.VUE_APP_BASE_API] :{
+          // 目标服务器地址
+          target: 'http://127.0.0.1:9999',
+          changeOrigin: true, // 开启代理服务器，
+          pathRewrite: {
+              // 将 请求地址前缀 /dev-api 替换为 空的，
+              // '^/dev-api': '',
+              [ '^' + process.env.VUE_APP_BASE_API]: ''
+          }
+        }
       }
   },
 

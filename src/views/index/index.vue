@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="login-box">
       <div class="login-content">
-        <div class="text-header">login</div>
+        <div class="text-header">Sign in to Galaxy</div>
         <div class="input-wrapper">
           <div class="border-wrapper">
             <input type="text" v-model="userInfo.username" name="username" placeholder="username" class="border-item"/>
@@ -12,7 +12,7 @@
           </div>
         </div>
         <div class="action-wrapper">
-          <div class="login-button" @click="submitLogin()">SIGN IN</div>
+          <div class="login-button" @click="submitLogin()">Sign in</div>
         </div>
       </div>
     </div>
@@ -24,11 +24,16 @@ import { defineComponent } from "vue";
 export default defineComponent({
   data() {
     return {
-      redirectURL: '//www.fusheng.xyz:80',
+      redirectURL: '/',
       userInfo: {
         username: 'code-fusheng',
         password: '123456'
       }
+    }
+  },
+  created() {
+    if(this.$route.query.redirectURL != null) {
+      this.redirectURL = this.$route.query.redirectURL
     }
   },
   methods: {
@@ -77,10 +82,10 @@ export default defineComponent({
 .login-box:before {
   content: "";
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
   z-index: -1;
   background: #060c21;
   /* border: 2px solid rgb(173, 164, 164); */
@@ -89,10 +94,10 @@ export default defineComponent({
 .login-box:after {
   content: "";
   position: absolute;
-  top: -3px;
-  left: -3px;
-  right: -3px;
-  bottom: -3px;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
   z-index: -2;
   background: rgb(255, 255, 255);
   filter: blur(40px);
@@ -114,9 +119,8 @@ export default defineComponent({
 }
 
 .text-header {
-  font-size: 35px;
+  font-size: 25px;
   color: white;
-  text-transform: uppercase;
   line-height: 100px;
 }
 
@@ -165,7 +169,6 @@ export default defineComponent({
   height: 45px;
   line-height: 45px;
   width: 150px;
-  text-transform: uppercase;
   border: 2px solid #0e92b3;
   text-align: center;
   border-radius: 30px;
