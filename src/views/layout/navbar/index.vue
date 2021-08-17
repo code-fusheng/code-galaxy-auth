@@ -1,6 +1,6 @@
 <template>
   <!-- 顶部 -->
-  <div class="top-container">
+  <div id="top" class="top-container">
     <span class="item-text"></span>
   </div>
 </template>
