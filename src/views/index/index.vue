@@ -5,10 +5,10 @@
         <div class="text-header">Sign in to Galaxy</div>
         <div class="input-wrapper">
           <div class="border-wrapper">
-            <input type="text" v-model="userInfo.username" name="username" placeholder="username" class="border-item"/>
+            <input v-model="userInfo.username" type="text" name="username" placeholder="username" class="border-item" />
           </div>
           <div class="border-wrapper">
-            <input type="text" v-model="userInfo.password" name="password" placeholder="password" class="border-item"/>
+            <input v-model="userInfo.password" type="text" name="password" placeholder="password" class="border-item" />
           </div>
         </div>
         <div class="action-wrapper">
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
@@ -32,14 +32,14 @@ export default defineComponent({
     }
   },
   created() {
-    if(this.$route.query.redirectURL != null) {
+    if (this.$route.query.redirectURL != null) {
       this.redirectURL = this.$route.query.redirectURL
     }
   },
   methods: {
     submitLogin() {
-      this.$store.dispatch('login', this.userInfo).then((res) => {
-        const { code, msg } = res
+      this.$store.dispatch('login', this.userInfo).then(res => {
+        const { code } = res
         if (code === 200) {
           window.location.href = this.redirectURL
         }
@@ -59,7 +59,7 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   /* background-color: #060c21; */
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   /* border: 1px solid red; */
   /* background-color: white; */
 }
@@ -80,7 +80,7 @@ export default defineComponent({
 }
 
 .login-box:before {
-  content: "";
+  content: '';
   position: absolute;
   top: -2px;
   left: -2px;
@@ -92,7 +92,7 @@ export default defineComponent({
 }
 
 .login-box:after {
-  content: "";
+  content: '';
   position: absolute;
   top: -2px;
   left: -2px;
@@ -163,7 +163,7 @@ export default defineComponent({
   border-radius: 30px;
 }
 
-.action-wrapper .login-button{
+.action-wrapper .login-button {
   cursor: pointer;
   font-size: 18px;
   height: 45px;

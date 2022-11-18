@@ -25,6 +25,6 @@ export function info() {
     headers: {
       'Content-Type': 'application/json;charset=UTF-8'
     },
-    method: 'get',
+    method: 'get'
   })
 }

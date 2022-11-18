@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
+code-galaxy-auth
 /dist
-
 
 # local env files
 .env.local

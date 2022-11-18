@@ -3,14 +3,14 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    component: ()=> import('@/views/layout'),
+    component: () => import('@/views/layout'),
     children: [
       {
         path: '',
-        component: ()=> import('@/views/index/index'),
+        component: () => import('@/views/index/index')
       }
     ]
-  },
+  }
 ]
 
 const router = createRouter({
